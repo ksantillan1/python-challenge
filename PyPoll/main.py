@@ -65,7 +65,26 @@ with open(Data_csv, newline="") as csvfile:
     print("Winner: " + Winner)
     print("---------------------------------------")
     
+    with open("Poll_Results","w") as file:
+ 
     
-    
+        file.write(f'Election Results\n')
+        file.write(f'---------------------------------------\n')
+        file.write(f'Total Votes: {(str(TotalVote))}\n')
+        file.write(f'---------------------------------------\n')
+        file.write(CandidateList[0] + ": " + str(Porcentage1) + "% (" + str(Candidate1)+")")
+        file.write("\n")
+        file.write(CandidateList[1] + ": " + str(Porcentage2) + "% (" + str(Candidate2)+")")
+        file.write("\n")
+        file.write(CandidateList[2] + ": " + str(Porcentage3) + "% (" + str(Candidate3)+")") 
+        file.write("\n")
+        file.write(CandidateList[3] + ": " + str(Porcentage4) + "% (" + str(Candidate4)+")")
+        file.write("\n")
+        file.write("---------------------------------------")
+        file.write("\n")
+        file.write("Winner: " + Winner)
+        file.write("\n")
+        file.write("---------------------------------------")
+ 
     
     

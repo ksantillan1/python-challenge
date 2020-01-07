@@ -43,7 +43,31 @@ with open(Data_csv, newline="") as csvfile:
     print("Total: " + "$ "+str(NetAmount))
     print("Average Change: " + "$" + '{0:.2f}'.format(TotalChange/(months-1)))
     print("Greatest Increase in Profits: " + MaxMonth + " " + "($ " + str(max(ChangeList)) + ")")
-    print("Greates Decrease in Profits: " + MinMonth + " " + "($ "+ str(min(ChangeList)) + ")")
+    print("Greatest Decrease in Profits: " + MinMonth + " " + "($ "+ str(min(ChangeList)) + ")")
+       
+    
+    
+    with open("Financial_Analysis","w") as file:
+
+    
+        file.write("Financial Analysis")
+        file.write("\n")
+        file.write("----------------------------------")
+        file.write("\n")
+        file.write("Total Months: " + str(months))
+        file.write("\n")
+        file.write("Total: " + "$ "+str(NetAmount))
+        file.write("\n")
+        file.write("Average Change: " + "$" + '{0:.2f}'.format(TotalChange/(months-1)))
+        file.write("\n")
+        file.write("Greatest Increase in Profits: " + MaxMonth + " " + "($ " + str(max(ChangeList)) + ")")
+        file.write("\n")
+        file.write("Greatest Decrease in Profits: " + MinMonth + " " + "($ "+ str(min(ChangeList)) + ")")
+        file.write("\n")
+       
+    
+    
+    
     
     
     
