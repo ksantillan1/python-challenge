@@ -11,12 +11,13 @@ with open(Data_csv, newline="") as csvfile:
     
     Data = [row for row in csvreader]
     
-    months = sum(1 for row in Data)
+    months = int(sum(1 for row in Data))
     
     NetAmount = 0
     for row in Data:
         amount = float(row[1])
         NetAmount = NetAmount + amount
+    NetAmount= int(NetAmount)
     
     TotalChange = 0
     ChangeList = []
@@ -34,16 +35,17 @@ with open(Data_csv, newline="") as csvfile:
     MinIndex = ChangeList.index(min(ChangeList))
     MinRow = Data[MinIndex+1]
     MinMonth = MinRow[0]
-        
+    MaxChangeList= int(max(ChangeList))
+    MinChangeList= int(min(ChangeList))
 
     print("Financial Analysis")
     print("----------------------------------")
    
     print("Total Months: " + str(months))
-    print("Total: " + "$ "+str(NetAmount))
+    print("Total: " + "$"+str(NetAmount))
     print("Average Change: " + "$" + '{0:.2f}'.format(TotalChange/(months-1)))
-    print("Greatest Increase in Profits: " + MaxMonth + " " + "($ " + str(max(ChangeList)) + ")")
-    print("Greatest Decrease in Profits: " + MinMonth + " " + "($ "+ str(min(ChangeList)) + ")")
+    print("Greatest Increase in Profits: " + MaxMonth + " " + "($" + str(MaxChangeList) + ")")
+    print("Greatest Decrease in Profits: " + MinMonth + " " + "($"+ str(MinChangeList) + ")")
        
     
     
@@ -56,13 +58,13 @@ with open(Data_csv, newline="") as csvfile:
         file.write("\n")
         file.write("Total Months: " + str(months))
         file.write("\n")
-        file.write("Total: " + "$ "+str(NetAmount))
+        file.write("Total: " + "$"+str(NetAmount))
         file.write("\n")
         file.write("Average Change: " + "$" + '{0:.2f}'.format(TotalChange/(months-1)))
         file.write("\n")
-        file.write("Greatest Increase in Profits: " + MaxMonth + " " + "($ " + str(max(ChangeList)) + ")")
+        file.write("Greatest Increase in Profits: " + MaxMonth + " " + "($" + str(MaxChangeList) + ")")
         file.write("\n")
-        file.write("Greatest Decrease in Profits: " + MinMonth + " " + "($ "+ str(min(ChangeList)) + ")")
+        file.write("Greatest Decrease in Profits: " + MinMonth + " " + "($"+ str(MinChangeList) + ")")
         file.write("\n")
        
     
